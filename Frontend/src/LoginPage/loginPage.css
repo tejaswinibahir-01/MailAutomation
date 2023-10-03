@@ -1,0 +1,176 @@
+.register{
+  background: -webkit-linear-gradient(left, #053756,#0db9f2);
+  height: 100vh;
+  padding: 3%;
+  
+}
+
+.register_left{
+  
+  color: #fff;
+  margin-top: 25vh;
+  
+}
+
+.register_right{
+
+  background:#fff;
+  border-top-left-radius:20% 50%;
+  border-bottom-left-radius: 20% 50%; 
+  
+  
+}
+.register_left img{
+  
+  width: 70%;
+  height: 70%;
+  margin-left: 10%;
+  margin-bottom: 20%;
+}
+
+.Login-container
+{
+    display: flex;
+    flex-direction: column;
+    margin: auto; 
+    /* margin-right: 200px; */
+    background:transparent;
+    padding-bottom: 20px;
+    width: 550px; 
+    height: 650px;  
+}
+
+.text{
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  color: black;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.inputs{
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  background:transparent;
+  margin-top: 35px;
+  margin-bottom: 10px;
+  cursor: pointer; 
+}
+
+.input{
+  display: flex;
+  align-items: center;
+  margin: auto;
+  width: 380px;
+  height: 60px;
+  background: #eaeaea;
+  border: 6px;
+
+}
+.icon
+{
+  margin: 0px 30px;
+  color: #616161;
+}
+
+.input input
+{
+  height: 50px;
+  width: 300px;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: black;
+  font-size: 19px;
+ 
+}
+
+.role-container
+{
+    display: flex;
+    margin: 20px auto;
+    margin-top: 70px;
+}
+
+.roleL
+{
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    width: 149px;
+    height: 39px;
+    color: #fff;
+    background: #014068;
+    border-radius: 50px;
+    margin-left: -30px;
+    font-size: 15px;
+    font-weight:bolder;
+    cursor: pointer;
+    z-index: 2;
+    
+}
+.roleR
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    width: 149px;
+    height: 39px;
+    color: #fff;
+    background: #014068;
+    border-radius: 50px;
+    font-size: 15px;
+    font-weight:bolder;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.grey
+{
+    background: #eaeaea;
+    color: #525252;
+    z-index: 1;
+}
+
+.submit-container
+{
+    display: flex;
+    gap: 20px;
+    margin: 30px 120px auto ;
+}
+
+.btn
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 159px;
+    height: 49px;
+    color: #fff;
+    background: #014068;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.btn:hover
+{
+  background: #eaeaea;
+  color: #676767;
+  border:solid 2px #053756;
+}
+
+
+  .center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 5%;
+  }
