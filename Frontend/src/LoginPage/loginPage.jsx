@@ -100,8 +100,9 @@ const LoginPage=()=> {
     return (
       <div>
         <form onSubmit={e => submitLogout(e)}>
-          <button type="submit" className='btn'>Log out</button>
           <div >{Action==="Employee"?<Employee/>:<Manager/>}  </div>
+          <button type="submit" className='btn'>Log out</button>
+          
         </form>
         
         
