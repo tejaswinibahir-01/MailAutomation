@@ -1,56 +1,88 @@
-import {useState} from "react";
-import './Dropdown-style.css';
+import * as React from 'react';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemText from '@mui/material/ListItemText';
+import MenuItem from '@mui/material/MenuItem';
+import Menu from '@mui/material/Menu';
 
-const Status = ({status_selected,set_status_Selected,id,allSubTaskStatus,setallsubtask,iid}) => {
-    const [isActive,setIsActive] = useState(false);
-  const status_state = ['Remaining','Complete'];
-const changeDone = (iid) =>{
-  let temp =[...allSubTaskStatus];
-temp[iid].status= 'Completed';
-setallsubtask(temp);
-set_status_Selected(temp);
-console.log(temp);
-console.log(iid);
-}
-const changeRemaining = (iid) =>{
-  let temp =[...allSubTaskStatus];
-temp[iid].status= 'Remaining';
-setallsubtask(temp);
-set_status_Selected(temp);
-console.log(temp);
-console.log(iid);
-}
-    return(
-        <>
-      
-         <div className="dropdown">
-        <div className="dropdown-btn" onClick={(e) => { setIsActive(!isActive)
+const options = [
+  'Completed',
+  'Remaining',
+  'Delayed',
   
-     
-      }}> {status_selected}
-        <span className="fas fa-caret-down"></span></div>
-{isActive && (<div className="dropdown-content">
-  {allSubTaskStatus
-                  .filter((task) => task.id === iid).map((task,i) => (
-                    
- <div key={iid}>
-
- <div > <button onClick={()=>changeDone(iid-1)}>Complete</button></div>
-<div > <button onClick={()=>changeRemaining(iid-1)}>Remaining</button></div>
-
-</div>
-
-  ))}
- 
- 
-</div>)}
+];
 
 
-      </div>
-        
-        
-        </>)
 
+const Status = (props) => {
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [selectedIndex, setSelectedIndex] = React.useState(props.stat === "Remaining" ? 1 : 0);
+  const open = Boolean(anchorEl);
+  const handleClickListItem = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleMenuItemClick = (event, index,subId) => {
+    setSelectedIndex(index);
+    let temp =[...props.allSubTask];
+    
+  /*  temp[subId].status= 'COmpleted'; */
+  temp[subId-1] = { ...temp[subId-1], status: options[index]};
+  
+  props.setAllSubTask(temp);
+  console.log(props.allSubTask);
+    setAnchorEl(null);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  return (
+    <div>
+    
+      <List
+        component="nav"
+        aria-label="Device settings"
+        sx={{ bgcolor: 'background.paper' }}
+      >
+        <ListItem
+          button
+          id="lock-button"
+          aria-haspopup="listbox"
+          aria-controls="lock-menu"
+          aria-label="when device is locked"
+          aria-expanded={open ? 'true' : undefined}
+          onClick={handleClickListItem}
+        >
+          <ListItemText  align="right"
+            primary={options[selectedIndex]}
+           /* secondary={options[selectedIndex]}*/
+          />
+        </ListItem>
+      </List>
+      <Menu
+        id="lock-menu"
+        anchorEl={anchorEl}
+        open={open}
+        onClose={handleClose}
+        MenuListProps={{
+          'aria-labelledby': 'lock-button',
+          role: 'listbox',
+        }}
+      >
+        {options.map((option, index) => (
+          <MenuItem
+            key={option}
+            disabled={index === selectedIndex}
+            selected={index === selectedIndex}
+            onClick={(event) => handleMenuItemClick(event, index,props.subId)}
+          >
+            {option}
+          </MenuItem>
+        ))}
+      </Menu>
+    </div>
+  );
 }
-
 export default Status;

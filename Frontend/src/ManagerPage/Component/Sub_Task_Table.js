@@ -13,7 +13,7 @@ const Sub_Task_Table = ({ selected, setSelected, id,alltask,setalltask }) => {
           className="dropdown-btn"
           onClick={(e) => {
             setIsActive(!isActive);
-            console.log(e);
+            
           }}
         >
           {" "}

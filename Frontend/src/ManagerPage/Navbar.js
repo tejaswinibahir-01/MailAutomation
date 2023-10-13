@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Navbar(){
     return (
         <nav className ="nav">
@@ -8,8 +10,10 @@ export default function Navbar(){
             <li className="active">
                 <a href = "/My Teams">My Teams</a>
             </li>
+           
+           
             <li>
-                <a href ="/Projects">Projects</a>
+            <Link to="/projects" >Projects</Link>
             </li>
             <li>
                 <a href ="/My Profile">My Profile</a>
