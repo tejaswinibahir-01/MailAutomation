@@ -1,0 +1,104 @@
+.user-profile {
+    margin-top: 20px;
+    max-width: 100%;
+    height: 100vh;
+    margin: 0 auto;
+    padding: 20px;
+    background: linear-gradient(to top, #2f8ad4, #4eb8ff, white);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  
+  .user-profile-header h1 {
+    font-size: 2.5em;
+    margin-top: 50px;
+    color: #002c49;
+    border-bottom: 4px solid white;
+    padding-bottom: 10px;
+  }
+  
+  .user-profile-content {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 7px;
+  }
+  
+  .user-profile-img {
+    width: 30%;
+    text-align: center;
+  }
+  
+  .user-profile-img img {
+    width: 250px;
+    height: 250px;
+    border-radius: 60%;
+    object-fit: cover;
+  }
+  
+  .user-profile-img input[type="file"] {
+    margin-top: 10px;
+    margin-left: 100px;
+  }
+
+  .user-profile-details .edit-field span {
+    color: black; /* Set the color to black */
+    cursor: pointer; /* Add a pointer cursor to indicate it's clickable */
+    font-size: small;
+  }
+  
+
+  .user-profile-details {
+    width: 60%;
+  }
+  
+  .user-profile-details form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .profile-input {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+  
+  .profile-input label {
+    font-weight: bold;
+  }
+  
+  .edit-field {
+    display: flex;
+    align-items: center;
+  }
+  
+  .edit-field span {
+    margin-left: 10px;
+    cursor: pointer;
+    color: #3498db;
+    font-weight: bold;
+  }
+
+  /* ProfilePage.css */
+
+/* Style all buttons within the user-profile container */
+.user-profile button {
+  background-color: #003064;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: 3px solid #003064; 
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px; /* Adjust as needed */
+}
+
+.user-profile button:hover {
+  background-color: #007bff;
+}
+
+  

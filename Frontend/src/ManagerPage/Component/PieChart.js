@@ -19,7 +19,7 @@ const PieChart = (props) => {
   const options = {};
 
   return (
-    <div className="Pie" style={{ position: "absolute", top: "150px", right: "400px", width: "600px", height: "600px" }}>
+    <div className="Pie" style={{ position: "absolute", top: "150px", right: "100px", width: "600px", height: "600px" }}>
       <Pie data={data} options={options} />
     </div>
   );

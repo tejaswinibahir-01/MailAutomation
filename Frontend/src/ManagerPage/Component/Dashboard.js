@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import React, { useState } from "react";
+import { Grid, Card, CardContent, Typography } from "@material-ui/core";
 
 import ProfileCard from "../ProfileCard";
 
@@ -7,16 +8,21 @@ import "../Manager.css"; // Import the CSS file
 import Profile_Img from "../Assets/Profile_Img.png";
 import PieChart from "./PieChart";
 const Dashboard = () => {
-  const [profilePics] = useState([
+  // Fetch the user's name from local storage
+  const userName = localStorage.getItem('userName');
+
+  const [profilePics, setProfilePics] = useState([
     {
       id: 1,
-      name: "John Doe",
-      profileImage: { Profile_Img },
+      name: userName || 'John Doe', // Use the user's name if available, otherwise fallback to 'John Doe'
+      profileImage: "https://example.com/path/to/profile-image.jpg",
       designation: "Manager",
       employeeId: "EMP123",
     },
     // Add more profiles with name, image, designation, and employeeId as needed
   ]);
+
+
   const [selected, setSelected] = useState("Choose One");
 
   // Get the current date and time
@@ -84,7 +90,7 @@ const Dashboard = () => {
       taskID: 1031,
       subTaskName: "task 1",
       subDeadline: "9-11-2003",
-      status: "Remaining",
+      status: "Completed",
     },
     {
       srNO: 7,
@@ -93,7 +99,7 @@ const Dashboard = () => {
       taskID: 1041,
       subTaskName: "task 1",
       subDeadline: "9-11-2003",
-      status: "Remaining",
+      status: "Delayed",
     },
   ]);
   const total = allSubTask.length;
@@ -121,18 +127,12 @@ const Dashboard = () => {
         ))}
       </div>
 
+      <div className="Progress">
+        <p>Here is the progress of the team till now: </p>
+      </div>
   
       <PieChart remaining={remaining} complete={complete} delayed={delayed}/>
 
-      {/* Add the notes section container here */}
-      <div className="notes-section">
-        <h2>Notes for self</h2>
-        <textarea
-          placeholder="Enter your notes here..."
-          rows="5"
-          cols="50"
-        ></textarea>
-      </div>
     </>
   );
 };

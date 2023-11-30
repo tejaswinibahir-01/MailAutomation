@@ -1,5 +1,6 @@
 import React ,{useState, useEffect } from 'react';
 import {Navigate} from "react-router-dom"; 
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
@@ -28,7 +29,7 @@ const LoginPage=()=> {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [Action,setaction]=useState("Manager");
-    
+
 
   useEffect(() => {
     client.get("/api/user")
@@ -68,6 +69,7 @@ const LoginPage=()=> {
         }
       ).then(function(res) {
         setCurrentUser(true);
+        Navigate('/');
       });
     });
   }
@@ -100,9 +102,7 @@ const LoginPage=()=> {
     return (
       <div>
         <form onSubmit={e => submitLogout(e)}>
-          <div >{Action==="Employee"?<Employee/>:<Manager/>}  </div>
-          <button type="submit" className='btn'>Log out</button>
-          
+          <div >{Action==="Employee"?<Employee/>:<Manager/>}  </div>          
         </form>
         
         
